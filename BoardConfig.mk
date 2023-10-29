@@ -26,11 +26,17 @@ ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/sku/manifest_d.xml
 ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/sku/manifest_dn.xml
 ODM_MANIFEST_FDN_FILES := $(DEVICE_PATH)/sku/manifest_fdn.xml
 ODM_MANIFEST_N_FILES := $(DEVICE_PATH)/sku/manifest_n.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/lineage/config/device_framework_matrix.xml
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
 TARGET_KERNEL_CONFIG += vendor/ext_config/cebu-default.config
+
+# Kernel Modules - vendor_dlkm partition
+BOARD_USES_VENDOR_DLKMIMAGE := true
+BOARD_MOTO_DYNAMIC_PARTITIONS_PARTITION_LIST += vendor_dlkm
+BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
+AB_OTA_PARTITIONS += vendor_dlkm
 
 # Kernel Modules - Recovery
 BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
