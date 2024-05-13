@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_borneo.mk
+    $(LOCAL_DIR)/lineage_cebu.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_borneo-user \
-    lineage_borneo-userdebug \
-    lineage_borneo-eng
+    lineage_cebu-user \
+    lineage_cebu-userdebug \
+    lineage_cebu-eng
